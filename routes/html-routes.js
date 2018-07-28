@@ -32,7 +32,7 @@ module.exports = function(app) {
 
   app.get("/:handle", function(req, res) {
     if (req.user) {
-      res.sendFile(path.join(__dirname, "handlebars page relating to handle"));
+      res.render(path.join(__dirname, "handlebars page relating to handle"));
     };
   });
 
@@ -46,13 +46,13 @@ module.exports = function(app) {
   //shows results when looking by city
   app.get("/searchByLocation/results", function(req, res) {
     if (req.user) {
-      res.sendFile(path.join(__dirname, "....handlebars page showing search results from /searchbylocation page" ))
+      res.render(path.join(__dirname, "....handlebars page showing search results from /searchbylocation page" ))
     };
   });
 
   app.get("/searchByExperience/results", function (req, res) {
     if(req.user) {
-      res.sendFile(path.join(__dirname, ".....handlebars page showing search results from /searchByExperience"))
+      res.render(path.join(__dirname, ".....handlebars page showing search results from /searchByExperience"))
     }
   })
 
