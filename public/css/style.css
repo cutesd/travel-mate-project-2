@@ -17,11 +17,9 @@ body, html {
 
   .container{
       background-color:#FFF;
+      padding:0;
   }
 
-  .navbar-trans {
-    background: transparent;
-}
 
 .navbar ul{
     display:flex;
@@ -45,18 +43,46 @@ a.logo:focus {
     text-decoration: none;
 }
 
+.btn-outline-light{
+    border-width: 2px;
+}
+
+.btn-outline-secondary{
+    border-color:var(--purple);
+    color:var(--purple);
+    border-width: 2px;
+}
+
+.btn-secondary{
+    background-color: var(--purple);
+    border-color: var(--purple);
+}
+
+.btn-success{
+    background-color: var(--limegreen);
+    border: 2px solid var(--lightgreen);
+    color:#FFF;
+    font-weight:400;
+}
+
 .jumbotron{
     background: url('../img/friends_sc.jpg') no-repeat center center;
     background-color: var(--purple);
     background-size: cover;
     padding:0!important;
     height: 500px;
+    overflow: hidden;
 }
 
 .text-shadow{
-    text-shadow: 0px 2px 3px rgba(102,36,70,0.65), 
-	0px 8px 13px rgba(102,36,70,0.25),
+    text-shadow: 0px 0px 3px rgba(102,36,70,0.65), 
+	0px 8px 13px rgba(102,36,70,0.35),
 	0px 18px 23px rgba(102,36,70,0.1);
+}
+
+.btn-text{
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.5), 
+	0px 5px 10px rgba(0,0,0,0.25);
 }
 
 .jumbotron h1{
@@ -76,12 +102,7 @@ a.logo:focus {
     /* margin-left: 3.9rem; */
 }
 
-.title-area .btn-success{
-    background-color: var(--limegreen);
-    border: 2px solid var(--lightgreen);
-    color:#FFF;
-    font-weight:400;
-}
+
 
 .map-area h5{
     color: var(--purple);
@@ -92,13 +113,6 @@ a.logo:focus {
 .map-area p{
     line-height: 1.75;
 }
-
-.btn-outline-secondary{
-    border-color:var(--purple);
-    color:var(--purple);
-}
-
-/*cef67d*/
 
 .img-bg-1{
     position: relative;
@@ -145,25 +159,14 @@ a.logo:focus {
 } */
 
 .w-search{
-    width: calc(100% - 85px)!important;
+    width: calc(100% - 108px)!important;
 }
-
-.one{
-    background-color: var(--lightgreen);
-    background-image: -webkit-linear-gradient(30deg, #cef67d 50%, #4CBFFF 50%);
-  }
-  .two{
-    background-color: #34ADFF;
-    background-image: -webkit-linear-gradient(150deg, #34ADFF 35%, #4CBFFF 35%);
-    min-height: 400px;
-  }
-
-
 
   .footer {
     width: 100%;
     height: 60px; /* Set the fixed height of the footer here */
     line-height: 60px; /* Vertically center the text there */
     color: var(--lightgreen);
+    font-weight:300;
   }
   
