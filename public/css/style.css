@@ -53,7 +53,7 @@ a.logo:focus {
     height: 500px;
 }
 
-.jumbotron{
+.text-shadow{
     text-shadow: 0px 2px 3px rgba(102,36,70,0.65), 
 	0px 8px 13px rgba(102,36,70,0.25),
 	0px 18px 23px rgba(102,36,70,0.1);
@@ -61,16 +61,26 @@ a.logo:focus {
 
 .jumbotron h1{
     font-size: 3.5rem;
-    padding: 4rem 0 0 5rem;
     color:#FFF;
 }
 
-.jumbotron h4{
+.title-area{
+    margin: 4rem 0 0 5rem;
+    width: 334px;
+}
+
+.title-area h4{
     font-weight: 300;
     color: #FFF;
-    width: 334px;
     text-align: center;
-    margin-left: 3.9rem;
+    /* margin-left: 3.9rem; */
+}
+
+.title-area .btn-success{
+    background-color: var(--limegreen);
+    border: 2px solid var(--lightgreen);
+    color:#FFF;
+    font-weight:400;
 }
 
 .map-area h5{

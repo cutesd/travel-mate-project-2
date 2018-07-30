@@ -27,7 +27,7 @@
 
     <main class="container">
 
-        <div class="jumbotron jumbotron-fluid mx-5">
+        <div class="jumbotron jumbotron-fluid text-shadow mx-5">
 
             <nav class="navbar navbar-expand-lg navbar-trans navbar-inverse">
                 <a class="navbar-brand" href="/">
@@ -65,8 +65,13 @@
 
             </nav>
 
-            <h1>TravelMate</h1>
-            <h4>Some random text about using our extremely cool Travel Mate service.</h4>
+            <div class="title-area text-center">
+                <h1>TravelMate</h1>
+                <h4 class="mb-4">Some random text about using our extremely cool Travel Mate service.</h4>
+                <a href="/signup">
+                    <button class="btn btn-success btn-lg text-shadow">SIGN UP NOW</button>
+                </a>
+            </div>
         </div>
 
         <div class="map-area my-5">
@@ -89,12 +94,12 @@
         </div>
 
 
-        <div class="search-area my-5">
+        <div class="search-area my-5" id="search">
 
             <div class="row justify-content-center no-gutters">
                 <div class="col-md-9 col-lg-9 img-bg-1">
                     <div class="d-flex flex-column justify-content-center align-items-center px-5 w-100 h-100">
-                        <h3 class="text-light">SEARCH BY LOCATION</h3>
+                        <h3 class="text-light text-shadow">SEARCH BY LOCATION</h3>
                         <form class="form-inline my-2 my-lg-0 w-100">
                             <input class="form-control mr-sm-2 w-search" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
@@ -104,7 +109,7 @@
                 <div class="col-md-9 col-lg-9 img-bg-2 text-center">
 
                     <div class="d-flex flex-column justify-content-center align-items-center px-5 w-100 h-100">
-                        <h3 class="text-light">SEARCH BY EXPERIENCE</h3>
+                        <h3 class="text-light text-shadow">SEARCH BY EXPERIENCE</h3>
                         <form class="form-inline my-2 my-lg-0 w-100">
                             <input class="form-control mr-sm-2 w-search" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -127,7 +132,8 @@
 
     <footer class="footer text-center bg-dark">
 
-        <p class="mb-0"><i class="far fa-copyright"></i> 2018 TravelMate</p>
+        <p class="mb-0">
+            <i class="far fa-copyright"></i> 2018 TravelMate</p>
 
     </footer>
 
