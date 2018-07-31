@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "88888888",
+    "password": "password",
     "database": "travel_mateDB",
     "host": "127.0.0.1",
     "dialect": "mysql"

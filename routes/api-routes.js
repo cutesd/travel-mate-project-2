@@ -12,24 +12,43 @@ module.exports = function (app) {
     // They won't get this or even be able to access this page if they aren't authed
     res.json("/members");
   });
-
-  app.get("api/:id", (req, res) => {
-    db.findOne({
-      where: {
-        id: req.params.id
-      }
+  
+  app.get("/api/:id", (req, res) => {
+    db.User.findAll()
+    .then(data => {
+      res.json(data);
     })
-      .then(dbMember => {
-        res.json(dbMember);
-      })
-      .catch(err => {
-        res.send(err);
-      })
+    .catch (err => {
+      res.send(err);
+    });
+  });
+
+  app.get("/api/members", (req, res) => {
+    db.User.findAll({
+      from: User
+    })
+    .then(data => {
+      res.json(data);
+    })
+    .catch (err => {
+      res.send(err);
+    });
   });
 
 
+  // app.get("api/", (req, res) => {
+  //   db.User.findAll({})
+  //     .then(dbMember => {
+  //       res.json(dbMember);
+  //     })
+  //     .catch(err => {
+  //       res.send(err);
+  //     })
+  // });
+
+
   app.get("members/:handle", (req, res) => {
-    db.findOne({
+    db.User.findOne({
       where: {
         handle: req.params.handle
       }
@@ -42,14 +61,50 @@ module.exports = function (app) {
       })
   });
 
+  app.get("/api/city/:hostTown", (req, res) => {
+    db.User.findAll({
+      where: {
+        hostTown: req.params.hostTown
+      }
+    })
+    .then(data => {
+      res.json(data);
+    })
+    .catch (err => {
+      res.send(err);
+    });
+  });
+
+  app.get("/api/experiences/:activities", (req, res) => {
+    db.User.findAll({
+      where: {
+        activities: req.params.activities
+      }
+    })
+    .then(data => {
+      res.json(data);
+    })
+    .catch (err => {
+      res.send(err);
+    });
+  });
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function (req, res) {
     console.log(req.body);
     db.User.create({
+      name: req.body.name,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      hostTown: req.body.hostTown,
+      interests: req.body.interests,
+      aboutYou: req.body.aboutYou,
+      activities: req.body.activities,
+      profilePhoto: req.body.profilePhoto,
+      coverPhoto: req.body.coverPhoto,
+      userhandle: req.body.userhandle
     }).then(function () {
       res.redirect(307, "/api/login");
     }).catch(function (err) {

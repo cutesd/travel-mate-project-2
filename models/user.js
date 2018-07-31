@@ -54,9 +54,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     // using this so going to travelmate.com/nick12322, or whatever I choose, redirects to my profile.
-    handle: {
+    userhandle: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     }
 
   });
