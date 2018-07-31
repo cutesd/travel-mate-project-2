@@ -14,10 +14,12 @@ body, html {
     background-color:#efefef;
   }
 
-  .navbar{
-    padding:0;
-}
+  
 
+#navbarDropdown{
+    font-size: 2.25rem;
+    padding: .15rem .75rem;
+}
 
   .container{
       background-color:#FFF;
