@@ -36,15 +36,26 @@ module.exports = function (app) {
   });
 
 
-  // app.get("api/", (req, res) => {
-  //   db.User.findAll({})
-  //     .then(dbMember => {
-  //       res.json(dbMember);
-  //     })
-  //     .catch(err => {
-  //       res.send(err);
-  //     })
-  // });
+  //for getting individual members pages by url
+  app.get("/mate/:id", function (req, res) {
+    // Add sequelize code to find all posts, and return them to the user with res.json
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(data => {
+        // return the result
+        //  res.json(data);
+        // console.log(data.dataValues);
+        // var obj = data[0].dataValues;
+        res.render("profile", data.dataValues);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+
 
 
   app.get("members/:handle", (req, res) => {

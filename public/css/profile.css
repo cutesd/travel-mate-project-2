@@ -5,8 +5,6 @@
 
 .cover-photo{
     position: relative;
-    background: url('../img/friends_ex.jpg') no-repeat center center;
-    background-size:cover;
     height:255px;
 }
 
