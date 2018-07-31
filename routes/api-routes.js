@@ -35,18 +35,6 @@ module.exports = function (app) {
     });
   });
 
-
-  // app.get("api/", (req, res) => {
-  //   db.User.findAll({})
-  //     .then(dbMember => {
-  //       res.json(dbMember);
-  //     })
-  //     .catch(err => {
-  //       res.send(err);
-  //     })
-  // });
-
-
   app.get("members/:handle", (req, res) => {
     db.User.findOne({
       where: {
@@ -65,6 +53,21 @@ module.exports = function (app) {
     db.User.findAll({
       where: {
         hostTown: req.params.hostTown
+      }
+    })
+    .then(data => {
+      res.json(data);
+    })
+    .catch (err => {
+      res.send(err);
+    });
+  });
+
+  app.get("/api/city/:hostTown/:activities", (req, res) => {
+    db.User.findAll({
+      where: {
+        hostTown: req.params.hostTown,
+        activities: req.params.activities
       }
     })
     .then(data => {

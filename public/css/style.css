@@ -167,5 +167,23 @@ a.logo:focus {
     color: var(--lightgreen);
   }
 
-.card {display:inline-block;}
+.card {
+    display:inline-block;
+    }
+
+.btn-primary {
+    background-color: var(--purple);
+}
+
+#advSearch {
+    color: white;
+}
+
+#advSearch:hover {
+    color: var(--lightgreen);
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+
   
