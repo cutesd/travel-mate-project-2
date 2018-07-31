@@ -1,3 +1,4 @@
+var card = "<div class='card' style='width: 18rem;'> <img class='card-img-top' src='.../100px180/' alt='Card image cap'> <div class='card-body'> <h5 class='card-title'>Card title</h5> <p class='card-text'></p> <a href='#' class='btn btn-primary'>View Profile</a> </div> </div>";
 $(document).ready(function() {
     $("#searchByLocation").on("click", function(event) {
         event.preventDefault();
@@ -5,10 +6,12 @@ $(document).ready(function() {
         console.log(citySearched)
         $.get("/api/city/"+citySearched).then(function(res) {
             console.log("hello")
-            $("#results").append("<h1> Hello World </h1>")
-            for (var i = 0; i < res.length; i++){
-                console.log(res)
-                $("#results").append("<h1>" + res[i].name + "</h1>")
+            console.log(res.length)
+            $(".card").remove();
+            for (var i = 0; i <= res.length; i++){
+                console.log(res[i])
+                $("#results").slideDown("slow", function() {$("#results").append("<div class='card col-md-3' style='width: 18rem;'> <img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].aboutYou + "</p> <a href='localhost8080/" + res[i].userhandle + "' class='btn btn-primary'> View Profile </a> </div> </div>")})
+                //$("#results").append("<div class='card col-md-3' style='width: 18rem;'> <img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].aboutYou + "</p> <a href='localhost8080/" + res[i].userhandle + "' class='btn btn-primary'> View Profile </a> </div> </div>")
             }
         });
     });

@@ -12,34 +12,43 @@ module.exports = function (app) {
     // They won't get this or even be able to access this page if they aren't authed
     res.json("/members");
   });
-
-  app.get("api/:id", (req, res) => {
-    db.findOne({
-      where: {
-        id: req.params.id
-      }
+  
+  app.get("/api/:id", (req, res) => {
+    db.User.findAll()
+    .then(data => {
+      res.json(data);
     })
-      .then(dbMember => {
-        res.json(dbMember);
-      })
-      .catch(err => {
-        res.send(err);
-      })
+    .catch (err => {
+      res.send(err);
+    });
   });
 
-  app.get("api", (req, res) => {
-    db.findAll({})
-      .then(dbMember => {
-        res.json(dbMember);
-      })
-      .catch(err => {
-        res.send(err);
-      })
+  app.get("/api/members", (req, res) => {
+    db.User.findAll({
+      from: User
+    })
+    .then(data => {
+      res.json(data);
+    })
+    .catch (err => {
+      res.send(err);
+    });
   });
+
+
+  // app.get("api/", (req, res) => {
+  //   db.User.findAll({})
+  //     .then(dbMember => {
+  //       res.json(dbMember);
+  //     })
+  //     .catch(err => {
+  //       res.send(err);
+  //     })
+  // });
 
 
   app.get("members/:handle", (req, res) => {
-    db.findOne({
+    db.User.findOne({
       where: {
         handle: req.params.handle
       }
