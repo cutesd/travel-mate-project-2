@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+:root {
+    --purple: #8F3262;
+    --lightgreen: #cef67d;
+    --limegreen: #AFEE30;
+  }
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    color: #777;
+    background-color:#efefef;
+  }
+
+  .container{
+    background-color:#FFF;
+    padding:0;
+}
+  
+.noreact{
+    cursor: default;
+}
+
+#navbarDropdown{
+    font-size: 2.25rem;
+    padding: .15rem .75rem;
+}
+
+.dropdown-toggle{
+  background-color: var(--limegreen);
+  color:#FFF;
+}
+
+.dropdown-toggle::after {
+    content:none;
+}
+
+a.logo:hover,
+a.logo:active,
+a.logo:focus {
+    text-decoration: none;
+}
+
+.btn-outline-light{
+    border-width: 2px;
+}
+
+.btn-outline-light:hover{
+    color:var(--purple);
+}
+
+.btn-outline-secondary{
+    border-color:var(--purple);
+    color:var(--purple);
+    border-width: 2px;
+}
+
+.btn-secondary{
+    background-color: var(--purple);
+    border-color: var(--purple);
+}
+
+.btn-success{
+    background-color: var(--limegreen);
+    border: 2px solid var(--lightgreen);
+    color:#FFF;
+    font-weight:400;
+}
+
+.text-shadow{
+    text-shadow: 0px 0px 3px rgba(102,36,70,0.65), 
+	0px 8px 13px rgba(102,36,70,0.35),
+	0px 18px 23px rgba(102,36,70,0.1);
+}
+
+.btn-text{
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.5), 
+	0px 5px 10px rgba(0,0,0,0.25);
+}
+
+.footer {
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+    color: var(--lightgreen);
+    font-weight:300;
+  }
+  
