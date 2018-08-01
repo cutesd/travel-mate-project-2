@@ -173,6 +173,12 @@ a.logo:focus {
 
 .btn-primary {
     background-color: var(--purple);
+    border: var(--purple);
+
+}
+
+.btn-primary:hover {
+    background-color: var(--limegreen);
 }
 
 #advSearch {
