@@ -8,6 +8,14 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
+  app.get("/signup", function(req, res) {
+    // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
     }
@@ -22,39 +30,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
+  app.get("/settings", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/settings.html"));
+  });
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
-
-  //for getting individual members pages by url
-
-  app.get("/:handle", function(req, res) {
-    if (req.user) {
-      res.render(path.join(__dirname, "handlebars page relating to handle"));
-    };
-  });
-
-  // for searching a city / town on google maps?
-  app.get("/searchByLocation", function(req, res) {
-    if (req.user) {
-      res.sendFile(path.join(__dirname, "...."))
-    };
-  });
-
-  //shows results when looking by city
-  app.get("/searchByLocation/results", function(req, res) {
-    if (req.user) {
-      res.render(path.join(__dirname, "....handlebars page showing search results from /searchbylocation page" ))
-    };
-  });
-
-  app.get("/searchByExperience/results", function (req, res) {
-    if(req.user) {
-      res.render(path.join(__dirname, ".....handlebars page showing search results from /searchByExperience"))
-    }
-  })
-
 
 };

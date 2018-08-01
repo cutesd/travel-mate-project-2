@@ -8,7 +8,7 @@
 
     <meta name="description" content="DESCRIPTION HERE">
     <meta name="author" content="Kimberly Cooper">
-    <link rel="icon" href="./img/icon.png">
+    <link rel="icon" href="/assets/img/icon.png">
     <title>TravelMate</title>
 
     <!-- Bootstrap CSS -->
@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <!-- Additional CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 
 
 </head>
@@ -27,46 +28,50 @@
 
     <main class="container">
 
-        <div class="jumbotron jumbotron-fluid mx-5">
+        <div class="jumbotron jumbotron-fluid mx-0 mx-md-3 mx-lg-5">
 
-            <nav class="navbar navbar-expand-lg navbar-trans navbar-inverse">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="/">
                     <img src="./img/travelmate-icon_385.png" width="100" alt="">
                 </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navCollapse" aria-controls="navCollapse"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navCollapse">
+
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <button class="btn btn-outline-light btn-lg mr-3" type="button">Main button</button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-outline-light btn-lg mr-3" type="button">Smaller button</button>
+                            <button class="btn btn-outline-light btn-lg mr-3" type="button">Second button</button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-outline-light btn-lg mr-3" type="button">Smaller button</button>
+                            <button class="btn btn-outline-light btn-lg mr-3" type="button">Third button</button>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle btn btn-success btn-lg" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-circle"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
-
-                <div class="btn-group">
-                    <button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user-circle"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">Action</button>
-                        <button class="dropdown-item" type="button">Another action</button>
-                        <button class="dropdown-item" type="button">Something else here</button>
-                    </div>
-                </div>
-
             </nav>
 
-            <h1>TravelMate</h1>
-            <h4>Some random text about using our extremely cool Travel Mate service.</h4>
+            <div class="title-area text-shadow text-center">
+                <h1>TravelMate</h1>
+                <h4 class="mb-4">Some random text about using our extremely cool Travel Mate service.</h4>
+                <a href="/signup">
+                    <button class="btn btn-success btn-lg btn-text">SIGN UP NOW</button>
+                </a>
+            </div>
         </div>
 
         <div class="map-area my-5">
@@ -83,31 +88,31 @@
                     </div>
                 </div>
                 <div class="col-md-9 col-lg-7 px-5">
-                    <img src="./img/map.png" alt="Map" class="img-fluid">
+                    <img src="/assets/img/map.png" alt="Map" class="img-fluid">
                 </div>
             </div>
         </div>
 
 
-        <div class="search-area my-5">
+        <div class="search-area my-5" id="search">
 
             <div class="row justify-content-center no-gutters">
                 <div class="col-md-9 col-lg-9 img-bg-1">
                     <div class="d-flex flex-column justify-content-center align-items-center px-5 w-100 h-100">
-                        <h3 class="text-light">SEARCH BY LOCATION</h3>
+                        <h2 class="text-light text-shadow">SEARCH BY LOCATION</h2>
                         <form class="form-inline my-2 my-lg-0 w-100">
-                            <input class="form-control mr-sm-2 w-search" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                            <input class="form-control mr-sm-2 w-search" type="search" placeholder="Search" aria-label="Search" id="citySearchInput">
+                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit" id="searchByLocation">Search</button>
                         </form>
                     </div>
                 </div>
                 <div class="col-md-9 col-lg-9 img-bg-2 text-center">
 
                     <div class="d-flex flex-column justify-content-center align-items-center px-5 w-100 h-100">
-                        <h3 class="text-light">SEARCH BY EXPERIENCE</h3>
+                        <h2 class="text-light text-shadow">SEARCH BY EXPERIENCE</h2>
                         <form class="form-inline my-2 my-lg-0 w-100">
-                            <input class="form-control mr-sm-2 w-search" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                            <input class="form-control mr-sm-2 w-search" type="search" placeholder="Search" aria-label="Search" id="experienceSearchInput">
+                            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" id="searchByExperience">Search</button>
                         </form>
                     </div>
                 </div>
@@ -118,16 +123,19 @@
 
         </div>
 
-        <div id="search-results pb-5">
+        <div class="row">
+            <div id="results" class="col-md-12">
 
 
+            </div>
         </div>
 
     </main>
 
     <footer class="footer text-center bg-dark">
 
-        <p class="mb-0"><i class="far fa-copyright"></i> 2018 TravelMate</p>
+        <p class="mb-0">
+            <i class="far fa-copyright"></i> 2018 TravelMate</p>
 
     </footer>
 
@@ -137,12 +145,15 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
+
     <!-- Bootstrap Core -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+
+    <script src="/assets/js/index.js"></script>
 
 
 </body>
