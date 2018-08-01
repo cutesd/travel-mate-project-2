@@ -191,5 +191,12 @@ a.logo:focus {
     font-weight: bolder;
 }
 
+#errMsg {
+    font-family: "Open Sans", sans-serif;
+}
 
+.card-img-top {
+    height: 245.5px;
+    width: 245.5px;
+}
   
