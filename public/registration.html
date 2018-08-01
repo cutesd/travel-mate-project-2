@@ -14,7 +14,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="registration.css">
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
 
 </head>
 
@@ -33,18 +33,18 @@
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputName">Name</label>
-                            <input type="name" class="form-control" id="inputName" placeholder="Name">
+                            <label for="name">Name</label>
+                            <input type="name" class="form-control" id="name" placeholder="Name">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email</label>
-                            <input type="name" class="form-control" id="inputEmail4" placeholder="Email">
+                            <label for="register-email">Email</label>
+                            <input type="email" class="form-control" id="register-email" placeholder="Email">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputPassword">Password</label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="confirmPassword">Confirm Password</label>
@@ -52,56 +52,45 @@
                         </div>
                     </div>
                     <div class="form-row">
-                            <div class="form-group col-md-6">
-                                    <label for="inputHandle">User Name</label>
-                                    <input type="text" class="form-control" id="inputHandle" placeholder="@username">
-                                </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputLocation">Location</label>
-                                <input type="text" class="form-control" id="inputLocation" placeholder="Location">
-                            </div>
-                                </div>
-                    <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputInterests">Interests</label>
-                            <input type="text" class="form-control" id="inputInterests" placeholder="What are your interests?">
+                            <label for="handle">User Name</label>
+                            <input type="text" class="form-control" id="handle" placeholder="@username">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputActivities">Activities</label>
-                            <input type="text" class="form-control" id="inputActivities" placeholder="What are your favorite activities?">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Your Location">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="interests">Interests</label>
+                            <input type="text" class="form-control" id="interests" placeholder="What are your interests?">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="activities">Activities</label>
+                            <input type="text" class="form-control" id="activities" placeholder="What are your favorite activities?">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="aboutYou">About You</label>
                         <textarea class="form-control" id="aboutYou" placeholder="Tell us about yourself..." rows="3"></textarea>
                     </div>
-                    <form>
                         <div class="form-group">
                             <label for="profilePhoto">Profile Photo</label>
                             <input type="file" class="form-control-file" id="profilePhoto">
                         </div>
-                    </form>
-                    <form>
                         <div class="form-group">
                             <label for="coverPhoto">Cover Photo</label>
                             <input type="file" class="form-control-file" id="coverPhoto">
                         </div>
-                    </form>
-                    
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="host">
-                            <label class="form-check-label" for="gridCheck">
-                                I am a Host
-                            </label>
-                            <br>
-                            <input class="form-check-input" type="radio" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                I am a Hostee
-                            </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" id="host" checked> I am a Host</label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="optradio" id="hostee"> I am a Hostee</label>
+                      </div>
+
+                    <button type="submit" class="btn btn-primary" id="create-account">Create Account</button>
                 </form>
             </div>
 
@@ -111,8 +100,8 @@
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-7">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            <label for="logi-email">Email</label>
+                            <input type="email" class="form-control" id="login-email" placeholder="Email">
                         </div>
                         <br>
                         <div class="form-group col-md-7">
@@ -131,11 +120,12 @@
 
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <button type="submit" class="btn btn-primary" id="sign-in">Sign in</button>
                 </form>
             </div>
         </div>
     </div>
+    <script src="./js/registration.js"></script>
 </body>
 
 </html>

@@ -43,15 +43,15 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: true
     },
-
+//changes false to true for testing purposes
     profilePhoto: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
 
     coverPhoto: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
     // using this so going to travelmate.com/nick12322, or whatever I choose, redirects to my profile.
     handle: {
