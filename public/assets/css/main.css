@@ -14,17 +14,19 @@ body, html {
     background-color:#efefef;
   }
 
+  .container{
+    background-color:#FFF;
+    padding:0;
+}
   
+.noreact{
+    cursor: default;
+}
 
 #navbarDropdown{
     font-size: 2.25rem;
     padding: .15rem .75rem;
 }
-
-  .container{
-      background-color:#FFF;
-      padding:0;
-  }
 
 .dropdown-toggle{
   background-color: var(--limegreen);

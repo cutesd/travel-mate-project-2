@@ -14,6 +14,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
+
 // Handlebars
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -28,9 +29,11 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+require("./routes/passport-routes.js")(app);
+require("./routes/user-routes")(app);
+require("./routes/message-routes")(app);
 
-// Syncing our database and logging a message to the user upon success { force:true }
+// Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
