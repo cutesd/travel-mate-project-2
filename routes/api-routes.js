@@ -48,8 +48,19 @@ module.exports = function (app) {
   app.post("/api/signup", function (req, res) {
     console.log(req.body);
     db.User.create({
+      name: req.body.name,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      confirmPassword: req.body.confirmPassword,
+      handle: req.body.handle,
+      location: req.body.location,
+      interests: req.body.interests,
+      activities: req.body.activities,
+      aboutYou: req.body.aboutYou,
+      profilePhoto: req.body.profilePhoto,
+      coverPhoto: req.body.coverPhoto,
+      host: req.body.host,
+      hostee: req.body.hostee
     }).then(function () {
       res.redirect(307, "/api/login");
     }).catch(function (err) {

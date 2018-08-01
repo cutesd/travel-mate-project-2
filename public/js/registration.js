@@ -15,13 +15,10 @@ $(document).ready(function () {
 			aboutYou: $("#aboutYou").val().trim(),
 			profilePhoto: $("#profilePhoto").val().trim(),
 			coverPhoto: $("#coverPhoto").val().trim(),
-			host: $("#host").val().trim(),
-			hostee: $("#hostee").val().trim()
+			host: ($('input[name=optradio]:checked').val() === "host") ? true : false,
+			hostee: ($('input[name=optradio]:checked').val() === "hostee") ? true : false,
 		};
-// console.log(newUser);
-// $.post( "/api/signup", function( data ) {
-// 	alert( "Data Loaded: " + data );
-//   });
+		
 		$.post("/api/signup", newUser)
 			// on success, run this callback
 			.then(function (data) {
@@ -32,19 +29,19 @@ $(document).ready(function () {
 			});
 
 		// empty each input box by replacing the value with an empty string
-		$("#name").val("");
-		$("#register-email").val("");
-		$("#password").val("");
-		$("#confirmPassword").val("");
-		$("#handle").val("");
-		$("#location").val("");
-		$("#interests").val("");
-		$("#activities").val("");
-		$("#aboutYou").val("");
-		$("#profilePhoto").val("");
-		$("#coverPhoto").val("");
-		$("#host").val("");
-		$("#hostee").val("");
+		// $("#name").val("");
+		// $("#register-email").val("");
+		// $("#password").val("");
+		// $("#confirmPassword").val("");
+		// $("#handle").val("");
+		// $("#location").val("");
+		// $("#interests").val("");
+		// $("#activities").val("");
+		// $("#aboutYou").val("");
+		// $("#profilePhoto").val("");
+		// $("#coverPhoto").val("");
+		// $("#host").val("");
+		// $("#hostee").val("");
 
 	});
 });

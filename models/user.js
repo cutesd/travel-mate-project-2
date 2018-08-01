@@ -24,7 +24,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    hostTown: {
+    confirmPassword: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    location: {
       type: DataTypes.STRING,
       allowNull: true
     },
@@ -57,6 +62,16 @@ module.exports = function(sequelize, DataTypes) {
     handle: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+
+    host: {
+      type:  DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+
+    hostee: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
 
   });

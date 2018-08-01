@@ -75,19 +75,19 @@
                         <label for="aboutYou">About You</label>
                         <textarea class="form-control" id="aboutYou" placeholder="Tell us about yourself..." rows="3"></textarea>
                     </div>
-                        <div class="form-group">
+                        <div class="form-group col-md-6">
                             <label for="profilePhoto">Profile Photo</label>
-                            <input type="file" class="form-control-file" id="profilePhoto">
+                            <input type="text" class="form-control" id="profilePhoto">
                         </div>
                         <div class="form-group">
                             <label for="coverPhoto">Cover Photo</label>
                             <input type="file" class="form-control-file" id="coverPhoto">
                         </div>
                     <div class="radio">
-                        <label><input type="radio" name="optradio" id="host" checked> I am a Host</label>
+                        <label><input type="radio" name="optradio" id="host" value="host" checked> I am a Host</label>
                       </div>
                       <div class="radio">
-                        <label><input type="radio" name="optradio" id="hostee"> I am a Hostee</label>
+                        <label><input type="radio" name="optradio" id="hostee" value="hostee"> I am a Hostee</label>
                       </div>
 
                     <button type="submit" class="btn btn-primary" id="create-account">Create Account</button>
