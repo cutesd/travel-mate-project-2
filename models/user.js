@@ -71,12 +71,26 @@ module.exports = function (sequelize, DataTypes) {
       }
     }
 
+    // host: {
+    //   type:  DataTypes.BOOLEAN,
+    //   defaultValue: false
+    // },
+
+    // hostee: {
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: false
+    // }
+
   });
   //
   User.associate = function (models) {
     // Associating User with Messages
     // When an User is deleted, also delete any associated Messages
     User.hasMany(models.Message, {
+      onDelete: "cascade"
+    });
+
+    User.hasMany(models.Rating, {
       onDelete: "cascade"
     });
   };

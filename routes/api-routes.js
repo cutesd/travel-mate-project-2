@@ -13,7 +13,7 @@ module.exports = function (app) {
     res.json("/members");
   });
   
-  app.get("/api/:id", (req, res) => {
+  app.get("/api/members/:id", (req, res) => {
     db.User.findAll()
     .then(data => {
       res.json(data);
@@ -64,6 +64,7 @@ module.exports = function (app) {
   });
 
   app.get("/api/city/:location/:activities", (req, res) => {
+    console.log("city", req.params.location);
     db.User.findAll({
       where: {
         location: req.params.location,
@@ -107,7 +108,7 @@ module.exports = function (app) {
       interests: req.body.interests,
       activities: req.body.activities,
       profilePhoto: req.body.profilePhoto,
-      coverPhoto: req.body.coverPhoto,
+      coverPhoto: req.body.coverPhoto
     }).then(function () {
       res.redirect(307, "/api/login");
     }).catch(function (err) {

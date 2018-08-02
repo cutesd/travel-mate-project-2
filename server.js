@@ -33,10 +33,12 @@ require("./routes/api-routes")(app);
 require("./routes/passport-routes.js")(app);
 require("./routes/user-routes")(app);
 require("./routes/message-routes")(app);
+require("./routes/rating-routes")(app);
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force: false}).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
+
