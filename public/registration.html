@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="true">Register</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Name</label>
+                            <input type="name" class="form-control" id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="register-email">Email</label>
+                            <input type="email" class="form-control" id="register-email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="handle">User Name</label>
+                            <input type="text" class="form-control" id="handle" placeholder="@username">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Your Location">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="interests">Interests</label>
+                            <input type="text" class="form-control" id="interests" placeholder="What are your interests?">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="activities">Activities</label>
+                            <input type="text" class="form-control" id="activities" placeholder="What are your favorite activities?">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="aboutYou">About You</label>
+                        <textarea class="form-control" id="aboutYou" placeholder="Tell us about yourself..." rows="3"></textarea>
+                    </div>
+                        <div class="form-group col-md-6">
+                            <label for="profilePhoto">Profile Photo</label>
+                            <input type="text" class="form-control" id="profilePhoto">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="coverPhoto">Cover Photo</label>
+                            <input type="text" class="form-control" id="coverPhoto">
+                        </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" id="host" value="host" checked> I am a Host</label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="optradio" id="hostee" value="hostee"> I am a Hostee</label>
+                      </div>
+
+                    <button type="submit" class="btn btn-primary" id="create-account">Create Account</button>
+                </form>
+            </div>
+
+
+
+            <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-7">
+                            <label for="logi-email">Email</label>
+                            <input type="email" class="form-control" id="login-email" placeholder="Email">
+                        </div>
+                        <br>
+                        <div class="form-group col-md-7">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="gridCheck">
+                                Remember Me
+                            </label>
+                            <br>
+
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="sign-in">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/registration.js"></script>
+</body>
+
+</html>

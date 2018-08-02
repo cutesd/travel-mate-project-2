@@ -8,10 +8,18 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
+  app.get("/signup", function(req, res) {
+    // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/registration.html"));
   });
 
   app.get("/login", function(req, res) {
@@ -27,34 +35,5 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
-
-  //for getting individual members pages by url
-
-  app.get("/:handle", function(req, res) {
-    if (req.user) {
-      res.render(path.join(__dirname, "handlebars page relating to handle"));
-    };
-  });
-
-  // for searching a city / town on google maps?
-  app.get("/searchByLocation", function(req, res) {
-    if (req.user) {
-      res.sendFile(path.join(__dirname, "...."))
-    };
-  });
-
-  //shows results when looking by city
-  app.get("/searchByLocation/results", function(req, res) {
-    if (req.user) {
-      res.render(path.join(__dirname, "....handlebars page showing search results from /searchbylocation page" ))
-    };
-  });
-
-  app.get("/searchByExperience/results", function (req, res) {
-    if(req.user) {
-      res.render(path.join(__dirname, ".....handlebars page showing search results from /searchByExperience"))
-    }
-  })
-
 
 };

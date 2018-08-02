@@ -1,0 +1,124 @@
+
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+    width: 95%;
+}
+
+
+.jumbotron{
+    background: url('../img/friends_sc.jpg') no-repeat center center;
+    background-color: var(--purple);
+    background-size: cover;
+    padding:0!important;
+    height: 500px;
+    overflow: hidden;
+}
+
+.jumbotron h1{
+    font-size: 3.5rem;
+    color:#FFF;
+}
+
+.title-area{
+    margin: 4rem 0 0 5rem;
+    width: 334px;
+}
+
+.title-area h4{
+    font-weight: 300;
+    color: #FFF;
+    text-align: center;
+    /* margin-left: 3.9rem; */
+}
+
+
+
+.map-area h5{
+    color: var(--purple);
+    line-height: 1.75;
+    text-align: center;
+}
+
+.map-area p{
+    line-height: 1.75;
+}
+
+.img-bg-1{
+    position: relative;
+    background: url('../img/location.jpg') no-repeat center center;
+    background-size:cover;
+    overflow: hidden;
+    height:350px;
+}
+
+/* .img-bg-1:after { 
+    content: '';
+    position: absolute;
+    left: 49%;
+    width: 100%;
+    height: 200%;
+    background-color: rgb(255, 255, 255);
+    background-color:rgba(51,51,51,.75);
+    top: 0;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+} */
+
+.img-bg-2{
+    position: relative;
+    background: url('../img/experience-search.jpg') no-repeat center center;
+    background-size:cover;
+    overflow: hidden;
+    height:350px;
+}
+
+/* .img-bg-2:before { 
+    content: '';
+    position: absolute;
+    left: -44%;
+    width: 100%;
+    height: 200%;
+    background-color: rgb(255, 255, 255);
+    background-color:rgba(51,51,51,.75);
+    top: 0;
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+} */
+
+.w-search{
+    width: calc(100% - 108px)!important;
+}
+
+#results {
+    display: inline-flex; 
+    flex-wrap: wrap;
+}
+
+.card-img-top {
+    height: 245.5px;
+    width: 245.5px;
+}
+
+#advSearch {
+    color: var(--lightgreen);
+}
+
+#advSearch:hover {
+    color: var(--limegreen);
+    text-decoration: underline;
+    font-weight: bold
+}
+
+#profileBtn {
+    background-color: var(--purple);
+    border: var(--purple);
+}
+
+#profileBtn:hover {
+    background-color: var(--limegreen);
+}
+
