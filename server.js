@@ -29,6 +29,7 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
+require("./routes/api-routes")(app);
 require("./routes/passport-routes.js")(app);
 require("./routes/user-routes")(app);
 require("./routes/message-routes")(app);

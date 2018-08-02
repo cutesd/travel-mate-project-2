@@ -1,3 +1,5 @@
+
+var card = "<div class='card' style='width: 18rem;'> <img class='card-img-top' src='.../100px180/' alt='Card image cap'> <div class='card-body'> <h5 class='card-title'>Card title</h5> <p class='card-text'></p> <a href='#' class='btn btn-primary'>View Profile</a> </div> </div>";
 $(document).ready(function () {
     $("#scrollButton").on("click", function () {
         $([document.documentElement, document.body]).animate({
@@ -16,7 +18,7 @@ $(document).ready(function () {
             if (res.length > 0) {
                 for (var i = 0; i <= res.length; i++) {
                     console.log(res[i])
-                    $("#results").append("<div class='card col-md-3' style='width: 18rem;'> <a href='/" + res[i].userhandle + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].about + "</p> <a href='/" + res[i].username + "' class='btn btn-primary' id=profileBtn> View Profile </a> </div> </div>")
+                    $("#results").append("<div class='card col-md-3' style='width: 18rem;'> <a href='localhost8080/" + res[i].userhandle + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].aboutYou + "</p> <a href='localhost8080/" + res[i].userhandle + "' class='btn btn-primary'> View Profile </a> </div> </div>")
                 };
             } else {
                 $("#results").append("<h2 style='text-align: center;' class='errorMessage'>Sorry, nobody in " + citySearched + " is hosting with Travel Mate right now. Check back soon!");
@@ -52,7 +54,7 @@ $(document).ready(function () {
                     console.log(res[i]);
                     var splitArray = res[i].activities.split(",")
                     if (advExperience === '') {
-                        $("#results").append("<div class='card col-md-3' style='width: 18rem;'> <a href='/" + res[i].username + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title' style='text-align:center'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].about + "</p> <a href='/" + res[i].username + "' class='btn btn-primary' id='profileBtn'> View Profile </a> </div> </div>")
+                        $("#results").append("<div class='card col-md-3' style='width: 18rem;'> <a href='/" + res[i].userhandle + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title' style='text-align:center'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].aboutYou + "</p> <a href='localhost8080/" + res[i].userhandle + "' class='btn btn-primary' id='profileBtn'> View Profile </a> </div> </div>")
                     } else {
                         console.log(splitArray)
                         for (var j = 0; j <= splitArray.length; j++) {
@@ -61,7 +63,7 @@ $(document).ready(function () {
                                 console.log(advExperience);
                                 console.log(splitArray[j]);
                                 $(".errorMessage").remove();
-                                $("#results").append("<div class='card col-md-3' style='width: 18rem;'> <a href='/" + res[i].username + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title' style='text-align:center'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].about + "</p> <a href='/" + res[i].username + "' class='btn btn-primary' id='profileBtn'> View Profile </a> </div> </div>")
+                                $("#results").append("<div class='card col-md-3' style='width: 18rem;'> <a href='localhost8080/" + res[i].userhandle + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title' style='text-align:center'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].aboutYou + "</p> <a href='localhost8080/" + res[i].userhandle + "' class='btn btn-primary' id='profileBtn'> View Profile </a> </div> </div>")
                             } else if (j === splitArray.length && counter === 0) {
                                 $(".card").remove();
                                 $(".errorMessage").remove();
@@ -77,7 +79,5 @@ $(document).ready(function () {
         })
     });
 });
-
-
 
 

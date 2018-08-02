@@ -49,10 +49,10 @@ module.exports = function (app) {
       })
   });
 
-  app.get("/api/city/:hostTown", (req, res) => {
+  app.get("/api/city/:location", (req, res) => {
     db.User.findAll({
       where: {
-        hostTown: req.params.hostTown
+        location: req.params.location
       }
     })
     .then(data => {
@@ -63,10 +63,10 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/city/:hostTown/:activities", (req, res) => {
+  app.get("/api/city/:location/:activities", (req, res) => {
     db.User.findAll({
       where: {
-        hostTown: req.params.hostTown,
+        location: req.params.location,
         activities: req.params.activities
       }
     })
@@ -100,14 +100,14 @@ module.exports = function (app) {
     db.User.create({
       name: req.body.name,
       email: req.body.email,
+      username: req.body.username,
       password: req.body.password,
-      hostTown: req.body.hostTown,
+      location: req.body.location,
+      about: req.body.about,
       interests: req.body.interests,
-      aboutYou: req.body.aboutYou,
       activities: req.body.activities,
       profilePhoto: req.body.profilePhoto,
       coverPhoto: req.body.coverPhoto,
-      userhandle: req.body.userhandle
     }).then(function () {
       res.redirect(307, "/api/login");
     }).catch(function (err) {
