@@ -15,12 +15,14 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         {{#if user}}
-        <a class="dropdown-item noreact">Welcome {{ user.username }}!</a>
+        <a class="dropdown-item noreact">Welcome back {{ user.username }}!</a>
         <a class="dropdown-item" href="/settings">Control Panel</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="/logout">Log Out</a>
         {{else}}
+        <a class="dropdown-item noreact">Welcome!</a>
         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="/signup">Sign Up</a>
         <a class="dropdown-item" href="/login">Log In</a>
         {{/if}}
     </div>
@@ -59,12 +61,10 @@
                 <!-- /// LARGE LAYOUT /// -->
                 <div class="d-none d-md-flex flex-column align-items-center">
                     <h5 class="mt-4">{{ member.name }}</h5>
-                    <h6>aka: {{username}}</h6>
+                    <h6>aka: {{member.username}}</h6>
                     <h6>{{ member.location }}</h6>
 
-                    <div class="star-ratings-sprite my-2">
-                        <span style="width:82%" class="star-ratings-sprite-rating"></span>
-                    </div>
+                    <div class="memberRating"></div>
 
                     <div class="mt-2">
                         <h6>Interests</h6>
@@ -87,9 +87,7 @@
                         <h5>{{ member.name }}</h5>
                         <h6>{{ member.location }}</h6>
 
-                        <div class="star-ratings-sprite my-2">
-                            <span style="width:52%" class="star-ratings-sprite-rating"></span>
-                        </div>
+                       <div class="memberRating"></div>
                     </div>
 
                     <div class="mt-2">
@@ -127,43 +125,58 @@
                     </li>
                     {{/if}}
                 </ul>
-                <div class="tab-content p-5" id="myTabContent">
+                <div class="tab-content px-5 pt-4 pb-2" id="myTabContent">
 
-                    <!-- ==============  TAB #1  ============== -->
+                    <!-- ==============  TAB #1 ABOUT  ============== -->
 
                     <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
                         {{ member.about }}
                     </div>
 
-                    <!-- ==============  TAB #2  ============== -->
+                    <!-- ==============  TAB #2 ACTIVITIES  ============== -->
 
                     <div class="tab-pane fade" id="snapshot" role="tabpanel" aria-labelledby="snapshot-tab">
                         {{ member.activities }}
                     </div>
 
-                    <!-- ==============  TAB #3  ============== -->
+                    <!-- ==============  TAB #3 RATINGS  ============== -->
 
                     <div class="tab-pane fade" id="ratings" role="tabpanel" aria-labelledby="ratings-tab">
-                        <div class="card">
-                            <div class="card-body">
-                                Integer non hendrerit metus, vitae mollis nibh. Vestibulum faucibus sapien quam, in efficitur tellus ultricies eget. Duis
-                                sagittis pellentesque sapien, eu porttitor diam accumsan vel.
-                            </div>
-                        </div>
+                        {{#if user}}
+                        <button class="btn btn-outline-secondary mb-2" id="openRatings">Rate {{ member.username }}</button>
+                        {{/if}}
+                        <div class="card p-4" id="rating-area">
+                            <h5 class="card-title">Rate {{ member.username }}</h5>
+                            <div class="userRatesMember"></div>
 
-                        <div class="card">
-                            <div class="card-body">
-                                Integer non hendrerit metus, vitae mollis nibh. Vestibulum faucibus sapien quam, in efficitur tellus ultricies eget. Duis
-                                sagittis pellentesque sapien, eu porttitor diam accumsan vel.
+                            <div class="alert alert-success" id="rate-success" role="alert">
+                                Thank you for your rating!
                             </div>
+                            <form id="rateForm">
+                                <input type="hidden" id="userId" data-id="{{ user.id }}">
+                                <input type="hidden" id="memberId" data-id="{{ member.id }}">
+                                <input type="hidden" id="memberName" data-name="{{ member.username }}">
+                                <div class="form-group">
+                                    <label for="ratingTitle">Title:</label>
+                                    <input type="text" class="form-control" id="ratingTitle" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ratingText">Comments:</label>
+                                    <textarea class="form-control" id="ratingText" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit Rating</button>
+                            </form>
+
                         </div>
+                        <!-- ==============  RATINGS DISPLAY HERE  ============== -->
+                        <div id="ratings-display"></div>
                     </div>
 
-                    <!-- ==============  TAB #4  ============== -->
+                    <!-- ==============  TAB #4 CONTACT  ============== -->
 
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <div class="alert alert-success" id="msg-success" role="alert">
-                           Your message has been sent!
+                            Your message has been sent!
                         </div>
                         <form id="contactForm">
                             <input type="hidden" id="userId" data-id="{{ user.id }}">
@@ -183,7 +196,7 @@
                                 <label for="inputMessage">Message:</label>
                                 <textarea class="form-control" id="inputMessage" rows="3"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-secondary btn-block">Send Message</button>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block">Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -198,6 +211,7 @@
     </div>
     <!-- ./container -->
 
+    <!-- 
     <div class="container photo-area mt-2 mt-lg-4 p-4">
 
         <h4>Photo Album:</h4>
@@ -222,20 +236,20 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
     <!-- ./photo-area -->
 
     <!-- ==============  MAP AREA  ============== -->
 
-    <div class="container map-area mt-2 mt-lg-4 p-4">
+    <!-- <div class="container map-area mt-2 mt-lg-4 p-4">
         <h4>Location Map:</h4>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4"> -->
 
-                <!-- ==============  SIDE BAR  ============== -->
+    <!-- ==============  SIDE BAR  ============== -->
 
-                <nav class="d-none d-md-block bg-light sidebar">
+    <!-- <nav class="d-none d-md-block bg-light sidebar">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
@@ -263,16 +277,16 @@
                     </div>
                 </nav>
 
-            </div>
-            <!-- ./col-md-4 -->
+            </div> -->
+    <!-- ./col-md-4 -->
 
-            <div class="col-md-8">
+    <!-- <div class="col-md-8">
                 <img src="http://placehold.it/750x400" alt="" class="img-fluid">
             </div>
 
-        </div>
-        <!-- ./row -->
-    </div>
+        </div>-->
+    <!-- ./row -->
+    {{!-- </div> --}}
     <!-- ./map-area -->
 
 

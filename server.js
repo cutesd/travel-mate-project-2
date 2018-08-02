@@ -32,6 +32,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/passport-routes.js")(app);
 require("./routes/user-routes")(app);
 require("./routes/message-routes")(app);
+require("./routes/rating-routes")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
