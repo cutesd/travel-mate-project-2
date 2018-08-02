@@ -92,3 +92,33 @@
 .w-search{
     width: calc(100% - 108px)!important;
 }
+
+#results {
+    display: inline-flex; 
+    flex-wrap: wrap;
+}
+
+.card-img-top {
+    height: 245.5px;
+    width: 245.5px;
+}
+
+#advSearch {
+    color: var(--lightgreen);
+}
+
+#advSearch:hover {
+    color: var(--limegreen);
+    text-decoration: underline;
+    font-weight: bold
+}
+
+#profileBtn {
+    background-color: var(--purple);
+    border: var(--purple);
+}
+
+#profileBtn:hover {
+    background-color: var(--limegreen);
+}
+
