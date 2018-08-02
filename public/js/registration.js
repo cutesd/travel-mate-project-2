@@ -15,10 +15,12 @@ $(document).ready(function () {
 			aboutYou: $("#aboutYou").val().trim(),
 			profilePhoto: $("#profilePhoto").val().trim(),
 			coverPhoto: $("#coverPhoto").val().trim(),
+			//if host is checked then make key value of object true, otherwise make it false
 			host: ($('input[name=optradio]:checked').val() === "host") ? true : false,
+			//if hostee is checked then make key value of object true, otherwise make it false
 			hostee: ($('input[name=optradio]:checked').val() === "hostee") ? true : false,
 		};
-		
+
 		$.post("/api/signup", newUser)
 			// on success, run this callback
 			.then(function (data) {
