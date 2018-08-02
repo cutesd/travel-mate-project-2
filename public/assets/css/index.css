@@ -1,3 +1,9 @@
+.container12{
+  background-color:white;
+  margin-left: 4rem;
+  margin-right: 4rem;
+
+}
 
 .navbar ul{
     display: flex;
@@ -118,7 +124,7 @@ background-color: 	#7F345D;
     width: 100%;
     height: 60px; /* Set the fixed height of the footer here */
     line-height: 60px; /* Vertically center the text there */
-    color: var(--lightgreen);
+    color: #AFEE30;
   }
   .sidenav {
     margin-top:2.5rem;
@@ -823,4 +829,37 @@ body{margin-top:20px;
     #selA{
       background-color: #AFEE30;
       color:white;
+    }
+
+    /* EDIT PROFILE */
+    textarea{
+      border-color:lightgrey;
+      border-radius: 4px;
+    }
+    .container13{
+     box-shadow: 0px 2px 6px #E8D3DE;
+     margin-right:2px;
+    }
+    .custom-file-control{
+      background-color:#7F345D;
+      color:white;
+      padding:7px;
+      border-radius: 4px;
+    }
+    .custom-file-control:hover{
+      background-color:rgb(235, 203, 219);
+    }
+    #submitB{
+      background-color:#AFEE30;
+      border-color:#AFEE30;
+      color:white;
+    }
+    #submitB:hover{
+      background-color:limegreen;
+      border-color:limegreen;
+
+    }
+    #alertBox{
+      background-color:#E8D3DE;
+
     }
