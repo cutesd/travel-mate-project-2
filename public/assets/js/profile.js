@@ -53,7 +53,7 @@ $(document).ready(function () {
             text: rateText.val().trim(),
             UserId: parseInt($("#userId").data("id")),
             MemberId: parseInt($("#memberId").data("id")),
-            MemberName: $("#memberName").data("name")
+            UserName: $("#userName").data("name")
         };
         console.log(newData);
         createNew("ratings", newData);
@@ -88,8 +88,6 @@ $(document).ready(function () {
     // Submits a new data and brings user to blog page upon completion
     function createNew(model, data) {
         $.post("/api/" + model, data, function (res) {
-            //   window.location.href = "/blog";
-            console.log(res);
             if (model === "messages") {
                 msgSuccess.show();
                 contactForm.hide();
@@ -112,7 +110,7 @@ $(document).ready(function () {
 
     function addRating(obj) {
         let card = $("<div>").addClass("card mb-2");
-        let header = $("<div>").addClass("card-header text-muted").text(obj.MemberName + " wrote:");
+        let header = $("<div>").addClass("card-header text-muted").text(obj.UserName + " wrote:");
         card.append(header);
         let title = $("<h6>").addClass("card-title pt-4 px-4").append(`<div class="d-inline" id="sr` + obj.id + `"></div>&nbsp;&nbsp;` + obj.title);
         card.append(title);
@@ -140,8 +138,6 @@ $(document).ready(function () {
             _weighted += (star_arr[i] * (i + 1));
             _sum += star_arr[i];
         }
-        console.log(star_arr, _weighted, _sum);
-        console.log(_weighted/_sum);
         return _weighted / _sum;
     }
 
