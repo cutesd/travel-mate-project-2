@@ -108,6 +108,8 @@ module.exports = function (app) {
       activities: req.body.activities,
       profilePhoto: req.body.profilePhoto,
       coverPhoto: req.body.coverPhoto,
+      host: req.body.host,
+      hostee: req.body.hostee
     }).then(function () {
       res.redirect(307, "/api/login");
     }).catch(function (err) {

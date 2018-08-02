@@ -69,6 +69,16 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         isUrl: true
       }
+    },
+
+    host: {
+      type:  DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+
+    hostee: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
 
   });
