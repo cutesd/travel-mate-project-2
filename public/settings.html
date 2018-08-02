@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="btn-group">
-                    <button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-lg dropdown-toggle" id="mainDrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user-circle"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -96,21 +96,6 @@
                     <!-- MAIL PAGE -->
                     <div class="display" id="mail">
                         <div class="container">
-                            <!-- <div class="col-sm-3">
-                                            <a href="mail-compose.html" class="btn btn-danger btn-block btn-compose-email">Compose Email</a>
-                                            <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
-                                                <li class="active">
-                                                    <a href="#mail-inbox.html">
-                                                        <i class="fa fa-inbox"></i> Inbox  <span class="label pull-right">7</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#mail-compose.html"><i class="fa fa-envelope"></i> Send Mail</a>
-                                                </li>
-                                                <li><a href="#"> <i class="fa fa-trash"></i> Trash</a></li>
-                                            </ul>
-
-                                        </div> -->
                             <div class="panel rounded shadow panel-teal">
                                 <div class="panel-heading">
                                     <div class="pull-left">
@@ -143,22 +128,22 @@
                                             <li class="hidden-xs">
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-default btn-sm" id="selB">Selected</button>
-                                                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" id="selA" data-toggle="dropdown">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="#" id="dropdownH">
                                                                 <i class="fa fa-edit"></i> Mark as read</a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="#" id="dropdownH">
                                                                 <i class="fa fa-ban"></i> Spam</a>
                                                         </li>
-                                                        <li class="divider"></li>
+                                                    
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="#" id="dropdownH">
                                                                 <i class="fa fa-trash-o"></i> Delete</a>
                                                         </li>
                                                     </ul>

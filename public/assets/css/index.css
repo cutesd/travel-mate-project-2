@@ -68,7 +68,14 @@ background-color: 	#7F345D;
     -moz-transform: rotate(20deg);
     transform: rotate(20deg);
 } */
-
+#mainDrop{
+  background-color:#AFEE30;
+  color:white;
+}
+.dropdown-item:hover{
+  background-color:#AFEE30;
+  color:white;
+}
 .img-bg-2{
     position: relative;
     background: url('../img/experience-search.jpg') no-repeat center center;
@@ -151,6 +158,7 @@ background-color: 	#7F345D;
         padding:5px;
         font-size:16px;
         margin:5px;
+        color:white;
      }
 .option{
     margin:7px;
@@ -163,6 +171,9 @@ background-color: 	#7F345D;
 
 
     } 
+.panel-teal{
+  background-color:white;
+}
 body{margin-top:20px;
     background:#eee;
     }
@@ -404,7 +415,13 @@ body{margin-top:20px;
         padding: 10px 7px;
       }
     }
-    
+    #dropdownH{
+      color:#777;
+    }
+    #dropdownH:hover{
+      color:#8F3262;
+    }
+    /* CALENDAR */
 
     .calendar{
       color: #8F3262;
@@ -800,6 +817,10 @@ body{margin-top:20px;
 
     }
     #selB{
+      background-color: #AFEE30;
+      color:white;
+    }
+    #selA{
       background-color: #AFEE30;
       color:white;
     }
