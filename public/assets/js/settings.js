@@ -70,7 +70,43 @@ $("#deleteB").on("click", function () {
 //get all the messages 
 $.ajax({
     method: "GET",
-    url: "/api/messages"
+    url: "/api/messages?getall=inbox" // TODO: filter with userid?
 }).then(function(data){
-    console.log(data);
+    // console.log(data);
+    for(var i=0; i<data.length; i++){
+        // console.log(data[i].msg);
+        console.log(data[i]);
+        // if(data[i]==="id"){
+        //     console.log(data[i])
+        // }
+    $(".messages-tbody").append(`<tr class="unread selected">
+        <td>
+            <div class="ckbox ckbox-theme">
+                <input id="checkbox1" type="checkbox" checked="checked" class="mail-checkbox">
+                <label for="checkbox1"></label>
+            </div>
+        </td>
+        <td>
+            <a href="#" class="star star-checked">
+                <i class="fa fa-star"></i>
+            </a>
+        </td>
+        <td>
+            <div class="media">
+                <a href="#" class="pull-left">
+                    <img alt="..." src="${data[i].User.profilePhoto}" class="media-object">
+                </a>
+                <div class="media-body">
+                    <h4 class="text-primary">${data[i].User.name}</h4>
+                    <p class="email-summary">
+                        ${data[i].msg}
+                    </p>
+                    <span class="media-meta">${data[i].createdAt}</span>
+                </div>
+            </div>
+        </td>
+    </tr>`);
+    }
+    // loop through all of our users messages 
+    // and append them
 });
