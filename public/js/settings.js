@@ -65,3 +65,12 @@ $("#deleteB").on("click", function () {
     $("#booking").hide();
 
 });
+
+
+//get all the messages 
+$.ajax({
+    method: "GET",
+    url: "/api/messages"
+}).then(function(data){
+    console.log(data);
+});

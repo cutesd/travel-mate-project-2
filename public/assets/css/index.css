@@ -108,6 +108,38 @@ background-color: 	#7F345D;
     width: calc(100% - 108px)!important;
 }
 
+#results {
+    display: inline-flex; 
+    flex-wrap: wrap;
+}
+
+.card-img-top {
+    height: 245.5px;
+    width: 245.5px;
+}
+
+#advSearch {
+    color: var(--lightgreen);
+}
+
+#advSearch:hover {
+    color: var(--limegreen);
+    text-decoration: underline;
+    font-weight: bold
+}
+
+#profileBtn {
+    background-color: var(--purple);
+    border: var(--purple);
+}
+
+#profileBtn:hover {
+    background-color: var(--limegreen);
+}
+
+
+/*===================  LIZ CODE ====================*/
+
 .one{
     background-color: var(--lightgreen);
     background-image: -webkit-linear-gradient(30deg, #cef67d 50%, #4CBFFF 50%);

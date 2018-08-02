@@ -3,38 +3,52 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-  //for getting individual members pages by id
-  app.get("/users/id/:id", function (req, res) {
-    
+  //for getting individual members by id
+  app.get("/users/", function (req, res) {
+
+    var query = {};
+    if (req.query.member_id) {
+      query.id = req.query.member_id;
+    } else if (req.query.member_name) {
+      query.username = req.query.member_name;
+    }
+
     db.User.findOne({
-      where: {
-        id: req.params.id
-      }
+      where: query
     })
       .then(dbMember => {
-        // return the member
-        res.render("profile", {user: req.user, member: dbMember.dataValues});
+        res.render("profile", { user: req.user, member: dbMember.dataValues });
+        // res.json(dbMember);
       })
       .catch(err => {
+        console.log(err);
         res.json(err);
       });
   });
 
-//for getting individual members pages by username
-  app.get("/users/name/:username", (req, res) => {
-    db.User.findOne({
+  // DELETE route for deleting ratings
+  app.delete("/api/users/:id", function (req, res) {
+    db.User.destroy({
       where: {
-        username: req.params.username
+        id: req.params.id
       }
-    })
-      .then(dbMember => {
-        res.render("profile", dbMember.dataValues);
-      })
-      .catch(err => {
-        res.send(err);
-      })
+    }).then(dbMember => {
+      res.json(dbMember);
+    });
   });
 
-  
+  // PUT route for updating ratings
+  app.put("/api/users", function (req, res) {
+    db.User.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(dbUser => {
+        res.json(dbUser);
+      });
+  });
+
 
 };
