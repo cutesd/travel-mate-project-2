@@ -122,3 +122,11 @@
     background-color: var(--limegreen);
 }
 
+.errorMessage {
+    color: var(--purple);
+    font-family: inherit;
+}
+
+.nav-item.dropdown {
+    margin-left: 96%;
+}
