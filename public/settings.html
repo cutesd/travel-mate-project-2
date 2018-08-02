@@ -27,7 +27,7 @@
 
 <body>
 
-    <main class="container">
+    <main class="container12">
 
         <div class="jumbotron1 jumbotron-fluid mx-5">
 
@@ -92,7 +92,103 @@
 
                 </div>
                 <div class="col-sm-8">
-                    <div class="display" id="profile">Profile</div>
+                    <div class="display" id="profile">
+                        <div class="container13">
+                            
+                            <div class="row m-y-2">
+                                <!-- edit form column -->
+                                <div class="col-lg-4 text-lg-center">
+                                    <h2>Edit Profile</h2>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="alert alert-info alert-dismissable" id="alertBox">
+                                        <a class="panel-close close" data-dismiss="alert">×</a>
+                                        This is an
+                                        <strong>.alert</strong>. Use this to show important messages to the user.
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 push-lg-4 personal-info">
+                                    <form role="form">
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Name</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" value="Jane" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="email" value="email@gmail.com" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Location</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" value="" placeholder="New York" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">About Me</label>
+                                            <div class="col-lg-9">
+                                                <textarea value="" placeholder="About Me" rows="5" cols="30"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label form-control-label">Activities</label>
+                                                <div class="col-lg-9">
+                                                    <textarea value="" placeholder="Hiking, volleyball, tennis" rows="3" cols="30"></textarea>
+                                                </div>
+                                            </div>
+                                        <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label">Interests</label>
+                                                    <div class="col-lg-9">
+                                                        <textarea value="" placeholder="Coin collecting" rows="3" cols="30"></textarea>
+                                                    </div>
+                                                </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="text" value="janeuser" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="password" value="11111122333" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                                            <div class="col-lg-9">
+                                                <input class="form-control" type="password" value="11111122333" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                                            <div class="col-lg-9">
+                                                <input type="reset" class="btn btn-secondary" value="Cancel" />
+                                                <input type="button" id="submitB" class="btn btn-primary" value="Save Changes" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-4 pull-lg-8 text-xs-center">
+                                    <img src="//placehold.it/150" class="m-x-auto img-fluid img-circle" alt="avatar" />
+                                    <label class="custom-file">
+                                        <input type="file" id="file" class="custom-file-input">
+                                        <h6 class="m-t-2">Change profile photo:</h6>
+                                        <span class="custom-file-control">Choose file</span>
+                                    </label>
+                                        <label class="custom-file">
+                                            <input type="file" id="file" class="custom-file-input">
+                                            <h6 class="m-t-2">Change cover photo:</h6>
+                                            <span class="custom-file-control">Choose file</span>
+                                        </label>
+                                    </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
                     <!-- MAIL PAGE -->
                     <div class="display" id="mail">
                         <div class="container">
