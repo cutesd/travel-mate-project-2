@@ -15,8 +15,9 @@ $(document).ready(function () {
             $(".errorMessage").remove();
             if (res.length > 0) {
                 for (var i = 0; i <= res.length; i++) {
-                    console.log(res[i])
-                    $("#results").append("<div class='card col-md-3' style='width: 18rem;'> <a href='/" + res[i].userhandle + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].about + "</p> <a href='/" + res[i].username + "' class='btn btn-primary' id=profileBtn> View Profile </a> </div> </div>")
+                    var _str = (res[i].about.length > 150) ? res[i].about.substr(0, 150)+"..." : res[i].about;
+                    var card = $("<div>").addClass("col-sm-2 col-md-4 col-lg-3").append("<div class='card'> <a href='/users?member_id=" + res[i].id + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + _str + "</p> <a href='/users?member_id=" + res[i].id + "' class='btn btn-primary' id=profileBtn> View Profile </a> </div> </div>")
+                    $("#results").append(card);
                 };
             } else {
                 $("#results").append("<h2 style='text-align: center;' class='errorMessage'>Sorry, nobody in " + citySearched + " is hosting with Travel Mate right now. Check back soon!");

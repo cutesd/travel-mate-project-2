@@ -100,8 +100,10 @@ $(document).ready(function () {
 
     // Show all ratings
     function getAllRatings(id) {
+        console.log("get all ratings", id)
         $.get("/api/ratings?member_id=" + id, function (res) {
             for (var i = 0; i < res.length; i++) {
+                console.log(res[i]);
                 addRating(res[i]);
             }
             setStarRating();
