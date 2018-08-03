@@ -119,7 +119,9 @@
 
                     <div class="tab-pane fade" id="ratings" role="tabpanel" aria-labelledby="ratings-tab">
                         {{#if user}}
+                        {{#ifCond user.id member.id}}
                         <button class="btn btn-outline-secondary mb-2" id="openRatings">Rate {{ member.username }}</button>
+                        {{/ifCond}}
                         {{/if}}
                         <div class="card p-4" id="rating-area">
                             <h5 class="card-title">Rate {{ member.username }}</h5>
