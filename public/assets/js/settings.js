@@ -1,69 +1,45 @@
 $(document).ready(function () {
 
+    var areas = ["profile", "mail", "calendar"];
+    var menuItems = ["profileB", "mailB", "calendarB"];
+
     $("#mail").hide();
     $("#calendar").hide();
-    $("#booking").hide();
-    $("#delete").hide();
 
     getMail("inbox");
     getMail("sent");
 
 
-    $("#profB").on("click", function () {
-        $('#mailB').removeClass('selected');
-        $('#calendarB').removeClass('selected');
-        $('#bookingB').removeClass('selected');
-        $('#deleteB').removeClass('selected');
-        $(this).addClass('selected');
-        $("#profile").show();
-        $("#mail").hide();
-        $("#calendar").hide();
-        $("#booking").hide();
-        $("#delete").hide();
+    $("#profileB").on("click", function (e) {
+        btnClick("profile");
     });
-    $("#mailB").on("click", function () {
-        $('#profB').removeClass('selected');
-        $('#calendarB').removeClass('selected');
-        $('#bookingB').removeClass('selected');
-        $('#deleteB').removeClass('selected');
-        $(this).addClass('selected');
-        $("#mail").show();
-        $("#profile").hide();
-        $("#calendar").hide();
-        $("#booking").hide();
-        $("#delete").hide();
-    });
-    $("#calendarB").on("click", function () {
-        $('#mailB').removeClass('selected');
-        $('#profB').removeClass('selected');
-        $('#bookingB').removeClass('selected');
-        $('#deleteB').removeClass('selected');
-        $(this).addClass('selected');
-        $("#calendar").show();
-        $("#profile").hide();
-        $("#mail").hide();
-        $("#booking").hide();
-        $("#delete").hide();
-    });
-    $("#bookingB").on("click", function () {
-        $('#mailB').removeClass('selected');
-        $('#profB').removeClass('selected');
-        $('#calendarB').removeClass('selected');
-        $('#deleteB').removeClass('selected');
-        $(this).addClass('selected');
-        $("#booking").show();
-        $("#profile").hide();
-        $("#mail").hide();
-        $("#calendar").hide();
-        $("#delete").hide();
 
+    $("#mailB").on("click", function (e) {
+        btnClick("mail");
     });
+
+    $("#calendarB").on("click", function (e) {
+        btnClick("calendar");
+    });
+
+    function btnClick(id) {
+        areas.forEach(area => {
+            $("#" + area).hide();
+        });
+        menuItems.forEach(item => {
+            $("#" + item).removeClass("selected");
+        });
+
+        $("#" + id).show();
+        $("#" + id + "B").addClass("selected");
+
+    }
 
 
     //get all the messages 
     function getMail(mb) {
 
-        var _mailbox = (mb === "sent") ? $(".sentMessages-tbody"): $(".messages-tbody");
+        var _mailbox = (mb === "sent") ? $(".sentMessages-tbody") : $(".messages-tbody");
 
         $.get("/api/messages?getall=" + mb)
             .then(data => {
