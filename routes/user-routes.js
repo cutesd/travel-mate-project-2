@@ -3,8 +3,12 @@ var db = require("../models");
 
 module.exports = function (app) {
 
+  app.get("/getuser", (req,res)=>{
+    res.json(req.user);
+  });
+
   //for getting individual members by id
-  app.get("/users/", function (req, res) {
+  app.get("/users", function (req, res) {
 
     var query = {};
     if (req.query.member_id) {

@@ -108,19 +108,19 @@ USE `travel_mateDB`;
 -- INSERT INTO register (name, email, password, handle, location, interests, activities, aboutYou, profilePhoto, coverPhoto, host, hostee) VALUES ("Robert O.", "roberto@)mail.com", "?", "@robert0321", "Moscow, Russia", "drinking", "drinking activities", "Hi my name is Robert and I am coming to Moscow in August from Poland. I want to have a good time and experience all that the city has to offer", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCF9BCQDhciXJOPcT1XB5RHpxXGpJ0STjbQEWwrGyxNVsF7PAI", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr6UFU4iukLjxM4ez5Eaf088fP35O-eER_lcmNOAexf_ZsHmov", false, true);
 
 {
-    "name": ,
-    "email": ,
+    "name": "Mary Poppins",
+    "email": "mpoppins@gmail.com",
     "password": "4444",
-    "location": ,
-    "interests": ,
-    "about": ,
-    "activities": ,
-    "profilePhoto": ,
-    "coverPhoto": ,
-    "username": 
+    "location": "London, England",
+    "interests": "tea, spoons full of sugar",
+    "about": "Hello I am Mary Poppins and live in London, England. I can show you all of the sights of my town. I grew up here and know all of its history.",
+    "activities": "tea parties and flying",
+    "profilePhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2SaJVA3LVxB6BdAtystS1rJgWlhH-u-8dswqtTVlfsA7tpRPq",
+    "coverPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToWPG_bGU5Bkhk7HmA-biwzMP0jHKtAWvPY5FV7U7KXWg8FNNgDQ",
+    "username": "MaryPoppins"
 }
 
--- INSERT INTO register (name, email, password, handle, location, interests, activities, aboutYou, profilePhoto, coverPhoto, host, hostee) VALUES ("Mary Poppins", "mpoppins@gmail.com", "?", "@marypoppins", "London, England", "tea and spoons full of sugar", "tea parties and flying", "Hello I am Mary Poppins and live in London, England. I can show you all of the sights of my town. I grew up here and know all of its history.", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2SaJVA3LVxB6BdAtystS1rJgWlhH-u-8dswqtTVlfsA7tpRPq", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToWPG_bGU5Bkhk7HmA-biwzMP0jHKtAWvPY5FV7U7KXWg8FNNgDQ", true, false);
+-- INSERT INTO register (name, email, password, handle, location, interests, activities, aboutYou, profilePhoto, coverPhoto, host, hostee) VALUES (, , "?", "@marypoppins", , , , , , , true, false);
 
 {
     "name": ,

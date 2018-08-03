@@ -1,17 +1,3 @@
-.container12{
-  background-color:white;
-  margin-left: 4rem;
-  margin-right: 4rem;
-
-}
-
-.navbar ul{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 1rem;
-    width: 95%;
-}
-
 
 .jumbotron{
     background: url('../img/friends_sc.jpg') no-repeat center center;

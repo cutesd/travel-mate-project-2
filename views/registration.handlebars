@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="/assets/css/registration.css">
+<div class="container mt-3 mb-5 p-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            {{#if page.signup}}
+            <a class="nav-link" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false">Login</a>
+            {{else}}
+            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false">Login</a>
+            {{/if}}
+        </li>
+        <li class="nav-item">
+            {{#if page.signup}}
+            <a class="nav-link active" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="true">Register</a>
+            {{else}}
+            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="true">Register</a>
+            {{/if}}
+
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        {{#if page.signup}}
+        <div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
+            {{else}}
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                {{/if}}
+                <form class="mt-4">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Name</label>
+                            <input type="name" class="form-control" id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="register-email">Email</label>
+                            <input type="email" class="form-control" id="register-email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="handle">User Name</label>
+                            <input type="text" class="form-control" id="handle" placeholder="@username">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="Your Location">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="interests">Interests</label>
+                            <input type="text" class="form-control" id="interests" placeholder="What are your interests?">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="activities">Activities</label>
+                            <input type="text" class="form-control" id="activities" placeholder="What are your favorite activities?">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="aboutYou">About You</label>
+                        <textarea class="form-control" id="aboutYou" placeholder="Tell us about yourself..." rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="profilePhoto">Profile Photo</label>
+                        <input type="text" class="form-control" id="profilePhoto">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="coverPhoto">Cover Photo</label>
+                        <input type="text" class="form-control" id="coverPhoto">
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optradio" id="host" value="host" checked> I am a Host</label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optradio" id="hostee" value="hostee"> I am a Hostee</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary" id="create-account">Create Account</button>
+                </form>
+            </div>
+
+            {{#if page.signup}}
+            <div class="tab-pane fade mb-5" id="login" role="tabpanel" aria-labelledby="login-tab">
+                {{else}}
+                <div class="tab-pane fade show active mb-5" id="login" role="tabpanel" aria-labelledby="login-tab">
+                    {{/if}}
+                    <div class="row justify-content-center mt-3">
+                        <form class="col-lg-7 col-md-9" id="loginForm">
+                            <div class="form-group">
+                                <label for="login-email">Email</label>
+                                <input type="email" class="form-control" id="login-email" placeholder="Email">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" class="form-control" id="login-password" placeholder="Password">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="remember-me">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Remember Me
+                                    </label>
+                                    <br>
+
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-secondary" id="sign-in">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/assets/js/registration.js"></script>
+        <script src="/assets/js/login.js"></script>

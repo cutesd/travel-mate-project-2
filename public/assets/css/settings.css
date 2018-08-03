@@ -2,12 +2,11 @@
 
 /*===================  LIZ CODE ====================*/
 
-.footer {
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  color: #AFEE30;
+footer{
+  position: absolute;
+  bottom:0;
 }
+
 .sidenav {
   margin-top:2.5rem;
   background-color: #f1f1f1;
@@ -62,9 +61,7 @@
 .panel-teal{
 background-color:white;
 }
-body{margin-top:20px;
-  background:#eee;
-  }
+
   
   .btn-compose-email {
       padding: 10px 0px;
@@ -623,7 +620,7 @@ body{margin-top:20px;
     color: #222;
   }
   .cview__month-last:hover,.cview__month-next:hover{
-    color: #fff;
+    color: var(--limegreen);
   }
   
   .cview__month-current{
@@ -719,8 +716,10 @@ body{margin-top:20px;
     border-radius: 4px;
   }
   .container13{
-   box-shadow: 0px 2px 6px #E8D3DE;
-   margin-right:2px;
+    box-shadow: 0px 2px 16px rgba(0,0,0,.35);
+    background-color: white;
+    height: 550px;
+    overflow:scroll;
   }
   .custom-file-control{
     background-color:#7F345D;
