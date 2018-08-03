@@ -2,26 +2,24 @@ $("#mail").hide();
 $("#calendar").hide();
 $("#booking").hide();
 $("#delete").hide();
-var postAgain=false;
-$("#inboxC").on("click",function() {
+var postAgain = false;
+$("#inboxC").on("click", function () {
 
     $(".sentMessages-tbody").hide();
     $(".messages-tbody").hide();
-if(!postAgain){
-    myFunction();  
-    postAgain=true
-}  
+    if (!postAgain) {
+        myFunction();
+        postAgain = true
+    }
     $(".messages-tbody").show();
-
-
 });
-var postAgain2=false;
+var postAgain2 = false;
 
-$("#sentC").on("click",function() {
+$("#sentC").on("click", function () {
     $(".messages-tbody").hide();
-    if(!postAgain2){
-    myFunction2();
-    postAgain2=true
+    if (!postAgain2) {
+        myFunction2();
+        postAgain2 = true
     }
     $(".sentMessages-tbody").show();
 
@@ -93,19 +91,19 @@ $("#deleteB").on("click", function () {
 
 //get all the messages 
 function myFunction() {
-$.ajax({
-    method: "GET",
-    url: "/api/messages?getall=inbox" // TODO: filter with userid?
-}).then(function(data){
-    
-    // console.log(data);
-    for(var i=0; i<data.length; i++){
-        // console.log(data[i].msg);
-        console.log(data[i]);
-        // if(data[i]==="id"){
-        //     console.log(data[i])
-        // }
-    $(".messages-tbody").append(`<tr class="unread selected">
+    $.ajax({
+        method: "GET",
+        url: "/api/messages?getall=inbox" // TODO: filter with userid?
+    }).then(function (data) {
+
+        // console.log(data);
+        for (var i = 0; i < data.length; i++) {
+            // console.log(data[i].msg);
+            console.log(data[i]);
+            // if(data[i]==="id"){
+            //     console.log(data[i])
+            // }
+            $(".messages-tbody").append(`<tr class="unread selected">
         <td>
             <div class="ckbox ckbox-theme">
                 <input id="checkbox1" type="checkbox" checked="checked" class="mail-checkbox">
@@ -132,10 +130,10 @@ $.ajax({
             </div>
         </td>
     </tr>`);
-    }
-    // loop through all of our users messages 
-    // and append them
-});
+        }
+        // loop through all of our users messages 
+        // and append them
+    });
 
 }
 
@@ -143,16 +141,15 @@ function myFunction2() {
     $.ajax({
         method: "GET",
         url: "/api/messages?getall=sent" // TODO: filter with userid?
-    }).then(function(data){
+    }).then(function (data) {
         // console.log(data);
-        for(var i=0; i<data.length; i++){
+        for (var i = 0; i < data.length; i++) {
             // console.log(data[i].msg);
-            console.log(data[i]);
             // if(data[i]==="id"){
             //     console.log(data[i])
             // }
-        
-        $(".sentMessages-tbody").append(`<tr class="unread selected">
+
+            $(".sentMessages-tbody").append(`<tr class="unread selected">
             <td>
                 <div class="ckbox ckbox-theme">
                     <input id="checkbox1" type="checkbox" checked="checked" class="mail-checkbox">
@@ -183,4 +180,10 @@ function myFunction2() {
         // loop through all of our users messages 
         // and append them
     });
-    }
+}
+$.ajax({
+    method: "GET",
+    url: "/users/" // TODO: filter with userid?
+}).then(function (data) {
+    console.log(data)
+});
