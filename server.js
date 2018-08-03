@@ -22,7 +22,6 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-app.set('views', path.join(__dirname, 'views'));
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));

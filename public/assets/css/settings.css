@@ -7,6 +7,11 @@ footer{
   bottom:0;
 }
 
+#ratings-container, #mail-container{
+  height:550px;
+  overflow:scroll;
+}
+
 .sidenav {
   margin-top:2.5rem;
   background-color: #f1f1f1;

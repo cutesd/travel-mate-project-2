@@ -38,23 +38,24 @@
                     <a class="nav-link" id="mailB" href="#">Mailbox</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="rateB" href="#">Ratings</a>
+                    <a class="nav-link" id="rateB" data-id="{{id}}" href="#">Ratings</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="calendarB" href="#">Calendar</a>
                 </li>
-                <li class="nav-item" id="deleteB">
+                <li class="nav-item">
                     <a href="/users?member_id={{id}}">
                         <button class="btn btn-outline-secondary mb-2" data-toggle="modal" data-target="#delModal">View Profile</button>
                     </a>
                 </li>
-                <li class="nav-item" id="deleteB">
+                <li class="nav-item">
                     <button class="btn btn-outline-danger" data-toggle="modal" data-target="#delModal">Delete Account</button>
                 </li>
             </ul>
 
         </div>
         <div class="col-sm-8">
+            {{!-- PROFILE --}}
             <div class="display" id="profile">
                 <div class="container13 p-3">
 
@@ -160,7 +161,7 @@
             </div>
             <!-- MAIL PAGE -->
             <div class="display" id="mail">
-                <div class="container">
+                <div class="container" id="mail-container">
                     <div class="panel rounded shadow panel-teal">
                         <div class="panel-heading text-center">
                             Welcome to your mailbox
@@ -197,6 +198,14 @@
 
                 </div>
             </div>
+            <!-- RATINGS PAGE -->
+            <div class="display" id="rate">
+                <div class="container" id="ratings-container">
+                    
+
+                </div>
+            </div>
+            {{!-- CALENDAR --}}
             <div class="display" id="calendar">
                 <div class="calendar" id="calendar-app">
                     <div class="calendar--day-view" id="day-view">

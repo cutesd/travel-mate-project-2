@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="/assets/css/profile.css">
-<link rel="stylesheet" href="/assets/css/star-rating-svg.css">
 
-<script src="/assets/js/jquery.star-rating-svg.js"></script>
 <script src="/assets/js/profile.js"></script>
 
 <!-- ==============  MAIN CONTENT AREA  ============== -->
@@ -94,10 +92,13 @@
                     <li class="nav-item">
                         <a class="nav-link" id="ratings-tab" data-toggle="tab" href="#ratings" role="tab" aria-controls="ratings" aria-selected="false">Ratings</a>
                     </li>
+
                     {{#if user}}
+                    {{#ifCond user.id member.id}}
                     <li class="nav-item">
                         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
                     </li>
+                    {{/ifCond}}
                     {{/if}}
                 </ul>
                 <div class="tab-content px-5 pt-4 pb-2" id="myTabContent">
