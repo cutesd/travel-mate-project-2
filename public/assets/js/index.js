@@ -34,7 +34,7 @@ $(document).ready(function () {
             if (res.length > 0) {
                 for (var i = 0; i <= res.length; i++) {
                     var _str = (res[i].about.length > 150) ? res[i].about.substr(0, 150) + "..." : res[i].about;
-                    var card = $("<div>").addClass("col-sm-2 col-md-4 col-lg-3").append("<div class='card'> <a href='/users?member_id=" + res[i].id + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + _str + "</p> <a href='/users?member_id=" + res[i].id + "' class='btn btn-primary' id=profileBtn> View Profile </a> </div> </div>")
+                    var card = $("<div>").addClass("col-sm-2 col-md-4 col-lg-3").append("<div class='card'> <a href='/users?member_id=" + res[i].id + "'><img class='card-img-top img-fluid' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + _str + "</p> <a href='/users?member_id=" + res[i].id + "' class='btn btn-primary' id=profileBtn> View Profile </a> </div> </div>")
                     $("#results").append(card);
                 };
             } else {
