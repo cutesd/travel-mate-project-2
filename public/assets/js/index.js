@@ -1,11 +1,29 @@
 $(document).ready(function () {
-    $("#scrollButton").on("click", function () {
+
+    $(".ifuser").hide();
+
+    var user_obj;
+    //
+    $.get("/getuser")
+        .then(res => {
+            console.log("user",res);
+            user_obj = res;
+            $("#username").text(user_obj.username);
+            $(".ifuser").show();
+            $(".ifnouser").hide();
+        });
+
+    //
+    $(".scrollButton").on("click", function (e) {
+        e.preventDefault();
         $([document.documentElement, document.body]).animate({
             scrollTop: $("#searchTitle").offset().top
-        }, 2000);
+        }, 1000);
     });
-    $("#searchByLocation").on("click", function (event) {
-        event.preventDefault();
+
+    //
+    $("#searchByLocation").on("click", function (e) {
+        e.preventDefault();
         var citySearched = $("#citySearchInput").val().trim()
         console.log(citySearched)
         $.get("/api/city/" + citySearched).then(function (res) {
@@ -15,8 +33,9 @@ $(document).ready(function () {
             $(".errorMessage").remove();
             if (res.length > 0) {
                 for (var i = 0; i <= res.length; i++) {
-                    console.log(res[i])
-                    $("#results").append("<div class='card col-md-3' style='width: 18rem;'> <a href='/" + res[i].userhandle + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + res[i].about + "</p> <a href='/" + res[i].username + "' class='btn btn-primary' id=profileBtn> View Profile </a> </div> </div>")
+                    var _str = (res[i].about.length > 150) ? res[i].about.substr(0, 150) + "..." : res[i].about;
+                    var card = $("<div>").addClass("col-sm-2 col-md-4 col-lg-3").append("<div class='card'> <a href='/users?member_id=" + res[i].id + "'><img class='card-img-top' src='" + res[i].profilePhoto + "' alt = 'user profile picture'></a> <div class = 'card-body'> <h5 class-'card-title'>" + res[i].name + "</h5> <p class='card-text'>" + _str + "</p> <a href='/users?member_id=" + res[i].id + "' class='btn btn-primary' id=profileBtn> View Profile </a> </div> </div>")
+                    $("#results").append(card);
                 };
             } else {
                 $("#results").append("<h2 style='text-align: center;' class='errorMessage'>Sorry, nobody in " + citySearched + " is hosting with Travel Mate right now. Check back soon!");

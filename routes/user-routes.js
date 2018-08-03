@@ -3,8 +3,12 @@ var db = require("../models");
 
 module.exports = function (app) {
 
+  app.get("/getuser", (req, res) => {
+    res.json(req.user);
+  });
+
   //for getting individual members by id
-  app.get("/users/", function (req, res) {
+  app.get("/users", function (req, res) {
 
     var query = {};
     if (req.query.member_id) {
@@ -17,7 +21,18 @@ module.exports = function (app) {
       where: query
     })
       .then(dbMember => {
-        res.render("profile", { user: req.user, member: dbMember.dataValues });
+        res.render("profile", {
+          user: req.user,
+          member: dbMember.dataValues,
+          helpers: {
+            ifCond: function (v1, v2, options) {
+              if (v1 !== v2) {
+                return options.fn(this);
+              }
+              return options.inverse(this);
+            }
+          }
+        });
         // res.json(dbMember);
       })
       .catch(err => {

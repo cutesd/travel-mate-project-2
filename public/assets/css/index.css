@@ -1,12 +1,4 @@
 
-.navbar ul{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 1rem;
-    width: 95%;
-}
-
-
 .jumbotron{
     background: url('../img/friends_sc.jpg') no-repeat center center;
     background-color: var(--purple);
@@ -15,7 +7,9 @@
     height: 500px;
     overflow: hidden;
 }
-
+.jumbotron1{
+background-color: 	#7F345D;
+}
 .jumbotron h1{
     font-size: 3.5rem;
     color:#FFF;
@@ -66,7 +60,14 @@
     -moz-transform: rotate(20deg);
     transform: rotate(20deg);
 } */
-
+#mainDrop{
+  background-color:#AFEE30;
+  color:white;
+}
+.dropdown-item:hover{
+  background-color:#AFEE30;
+  color:white;
+}
 .img-bg-2{
     position: relative;
     background: url('../img/experience-search.jpg') no-repeat center center;
@@ -121,4 +122,3 @@
 #profileBtn:hover {
     background-color: var(--limegreen);
 }
-

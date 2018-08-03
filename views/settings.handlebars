@@ -1,0 +1,284 @@
+<link rel="stylesheet" href="/assets/css/index.css">
+
+<link rel="stylesheet" href="/assets/css/settings.css">
+
+
+<!-- Modal -->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delModalTitle">Account Deletion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your account?
+                <br>Click DELETE button to confirm.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger">DELETE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <ul class="nav nav-pills flex-column">
+                <p id="set">Settings</p>
+                <li class="nav-item">
+                    <a class="nav-link selected" id="profileB" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="mailB" href="#">Mailbox</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="rateB" data-id="{{id}}" href="#">Ratings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="calendarB" href="#">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users?member_id={{id}}">
+                        <button class="btn btn-outline-secondary mb-2" data-toggle="modal" data-target="#delModal">View Profile</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#delModal">Delete Account</button>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-sm-8">
+            {{!-- PROFILE --}}
+            <div class="display" id="profile">
+                <div class="container13 p-3">
+
+                    <div class="row my-2">
+                        <!-- edit form column -->
+                        <div class="col-lg-4">
+                            <h2>Edit Profile</h2>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="alert alert-info alert-dismissable d-none" id="alertBox">
+                                <a class="panel-close close" data-dismiss="alert">×</a>
+                                This is an
+                                <strong>.alert</strong>. Use this to show important messages to the user.
+                            </div>
+                        </div>
+                        <div class="col-lg-8 push-lg-4 personal-info">
+                            <form role="form" id="updateForm">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="{{name}}" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="{{email}}" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Location</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="{{location}}" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">About Me</label>
+                                    <div class="col-lg-9">
+                                        <textarea rows="5" cols="30">{{about}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Activities</label>
+                                    <div class="col-lg-9">
+                                        <textarea rows="3" cols="30">{{activities}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Interests</label>
+                                    <div class="col-lg-9">
+                                        <textarea rows="3" cols="30">{{interests}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="{{username}}" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" value="{{password}}" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-9">
+                                        <button class="btn btn-secondary" type="submit">Save Changes</button>
+                                        <button class="btn btn-success" type="clear">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-4 pull-lg-8 text-xs-center">
+                            <img src="{{profilePhoto}}" class="m-x-auto img-fluid img-circle" alt="avatar" />
+                            <label class="custom-file h-auto mt-2">
+                                <h6>Change profile photo:</h6>
+                                <button class="btn btn-secondary mb-3" id="profileChange">Change URL</button>
+                                <div class="d-none" id="updateProfilePhoto">
+                                    <input type="text" class="form-control" id="profilePhoto" placeholder="http://">
+                                    <button class="btn btn-secondary mt-2 mb-3" id="profilePhotoBtn">Update</button>
+                                </div>
+                            </label>
+                            <img src="{{coverPhoto}}" class="m-x-auto img-fluid img-circle" alt="avatar" />
+                            <label class="custom-file h-auto mt-2">
+                                <h6>Change cover photo:</h6>
+                                <button class="btn btn-secondary mb-3" id="coverChange">Change URL</button>
+                                <div class="d-none" id="updateCoverPhoto">
+                                    <input type="text" class="form-control" id="coverPhoto" placeholder="http://">
+                                    <button class="btn btn-secondary mt-2 mb-3" id="coverPhotoBtn">Update</button>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MAIL PAGE -->
+            <div class="display" id="mail">
+                <div class="container" id="mail-container">
+                    <div class="panel rounded shadow panel-teal">
+                        <div class="panel-heading text-center">
+                            Welcome to your mailbox
+                        </div>
+                        <div class="panel-body no-padding">
+
+                            <div class="table-responsive">
+                                <table class="table table-hover table-email">
+                                    <thead>
+                                        <tr>
+                                            <th>Inbox</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="messages-tbody">
+
+                                    </tbody>
+                                    <thead>
+                                        <tr>
+                                            <th>Sent</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="sentMessages-tbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+
+                </div>
+            </div>
+            <!-- RATINGS PAGE -->
+            <div class="display" id="rate">
+                <div class="container" id="ratings-container">
+                    
+
+                </div>
+            </div>
+            {{!-- CALENDAR --}}
+            <div class="display" id="calendar">
+                <div class="calendar" id="calendar-app">
+                    <div class="calendar--day-view" id="day-view">
+                        <span class="day-view-exit" id="day-view-exit">&times;</span>
+                        <span class="day-view-date" id="day-view-date">MAY 29 2016</span>
+                        <div class="day-view-content">
+                            <div class="day-highlight">
+                                You
+                                <span class="day-events" id="day-events">had no events for today</span>. &nbsp;
+                                <span tabindex="0" onkeyup="if(event.keyCode != 13) return; this.click();" class="day-events-link" id="add-event" data-date>Add a new event?</span>
+                            </div>
+                            <div class="day-add-event" id="add-day-event-box" data-active="false">
+                                <div class="rowC">
+                                    <div class="half">
+                                        <label class="add-event-label">
+                                            Name of event
+                                            <input type="text" class="add-event-edit add-event-edit--long" placeholder="New event" id="input-add-event-name">
+
+                                        </label>
+                                    </div>
+                                    <div class="qtr">
+                                        <label class="add-event-label">
+                                            Start Time
+                                            <input type="text" class="add-event-edit" placeholder="8:15" id="input-add-event-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12"
+                                                data-format="datetime">
+                                            <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-start-ampm" data-options="a,p,am,pm">
+                                        </label>
+                                    </div>
+                                    <div class="qtr">
+                                        <label class="add-event-label">
+                                            End Time
+                                            <input type="text" class="add-event-edit" placeholder="9" id="input-add-event-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12"
+                                                data-format="datetime">
+                                            <input type="text" class="add-event-edit" placeholder="am" id="input-add-event-end-ampm" data-options="a,p,am,pm">
+                                        </label>
+                                    </div>
+                                    <div class="half">
+                                        <a onkeyup="if(event.keyCode != 13) return; this.click();" tabindex="0" id="add-event-save" class="event-btn--save event-btn">save</a>
+                                        <a tabindex="0" id="add-event-cancel" class="event-btn--cancel event-btn">cancel</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="day-events-list" class="day-events-list">
+
+                            </div>
+                            <div class="day-inspiration-quote" id="inspirational-quote">
+                                Every child is an artist. The problem is how to remain an artist once he grows up. –Pablo Picasso
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendar--view" id="calendar-view">
+                        <div class="cview__month">
+                            <span class="cview__month-last" id="calendar-month-last">Apr</span>
+                            <span class="cview__month-current" id="calendar-month">May</span>
+                            <span class="cview__month-next" id="calendar-month-next">Jun</span>
+                        </div>
+                        <div class="cview__header">Sun</div>
+                        <div class="cview__header">Mon</div>
+                        <div class="cview__header">Tue</div>
+                        <div class="cview__header">Wed</div>
+                        <div class="cview__header">Thu</div>
+                        <div class="cview__header">Fri</div>
+                        <div class="cview__header">Sat</div>
+                        <div class="calendar--view" id="dates">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/js/settings.js"></script>
+<script type="text/javascript" src="/assets/js/calendar.js"></script>

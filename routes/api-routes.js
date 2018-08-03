@@ -3,17 +3,8 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function (app) {
-  // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-    // So we're sending the user back the route to the members page because the redirect will happen on the front end
-    // They won't get this or even be able to access this page if they aren't authed
-    res.json("/members");
-  });
   
-  app.get("/api/:id", (req, res) => {
+  app.get("/api/members/:id", (req, res) => {
     db.User.findAll()
     .then(data => {
       res.json(data);
@@ -64,6 +55,7 @@ module.exports = function (app) {
   });
 
   app.get("/api/city/:location/:activities", (req, res) => {
+    console.log("city", req.params.location);
     db.User.findAll({
       where: {
         location: req.params.location,
@@ -107,9 +99,7 @@ module.exports = function (app) {
       interests: req.body.interests,
       activities: req.body.activities,
       profilePhoto: req.body.profilePhoto,
-      coverPhoto: req.body.coverPhoto,
-      host: req.body.host,
-      hostee: req.body.hostee
+      coverPhoto: req.body.coverPhoto
     }).then(function () {
       res.redirect(307, "/api/login");
     }).catch(function (err) {

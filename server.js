@@ -2,6 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
+var path = require("path");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
@@ -41,3 +42,4 @@ db.sequelize.sync({force: false}).then(function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
+
