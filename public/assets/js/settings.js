@@ -2,19 +2,27 @@ $("#mail").hide();
 $("#calendar").hide();
 $("#booking").hide();
 $("#delete").hide();
-
+var postAgain=false;
 $("#inboxC").on("click",function() {
+
     $(".sentMessages-tbody").hide();
     $(".messages-tbody").hide();
-
-    myFunction();    
+if(!postAgain){
+    myFunction();  
+    postAgain=true
+}  
     $(".messages-tbody").show();
 
 
 });
+var postAgain2=false;
+
 $("#sentC").on("click",function() {
     $(".messages-tbody").hide();
+    if(!postAgain2){
     myFunction2();
+    postAgain2=true
+    }
     $(".sentMessages-tbody").show();
 
 });
@@ -89,6 +97,7 @@ $.ajax({
     method: "GET",
     url: "/api/messages?getall=inbox" // TODO: filter with userid?
 }).then(function(data){
+    
     // console.log(data);
     for(var i=0; i<data.length; i++){
         // console.log(data[i].msg);
