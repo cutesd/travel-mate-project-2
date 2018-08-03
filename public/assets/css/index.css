@@ -351,7 +351,7 @@ body{margin-top:20px;
       margin-left: 6px;
     }
     .table-email .star.star-checked i {
-      color: goldenrod;
+      color: rgb(238,238,238);
     }
     
     .nav-email-subtitle {
@@ -857,6 +857,7 @@ body{margin-top:20px;
     #selB{
       background-color: #AFEE30;
       color:white;
+      border:none;
     }
     #selA{
       background-color: #AFEE30;
